@@ -1,0 +1,23 @@
+.root{
+    -fx-spacing: 30;
+    -fx-alignment: center;
+    -fx-background-color: lavender;
+}
+
+
+
+.textfield{
+    -fx-pref-width: 200;
+    -fx-prompt-text-fill: blue;
+}
+
+#title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+#organize {
+    -fx-background-color: #4CAF50; 
+    -fx-text-fill: white;
+    -fx-pref-width: 120;
+}
