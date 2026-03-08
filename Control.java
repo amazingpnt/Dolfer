@@ -12,22 +12,6 @@ public class Control{
 
     @FXML
     private TextField folderPathInput;
-    
-    private int pythonCaller(String path){
-        try{
-            List<String> command=List.of("python", "Python/organizer.py", path);
-
-            ProcessBuilder processBuilder=new ProcessBuilder(command);
-            Process process=processBuilder.start();
-            int exitCode=process.waitFor();
-
-            return exitCode;
-        }
-        catch(IOException | InterruptedException e){
-            e.printStackTrace();
-        }
-        return -1;
-    }
 
     @FXML
     private void chooseFolder(){
@@ -40,14 +24,15 @@ public class Control{
         if(selectedDirectory!=null){
             folderPathInput.setText(selectedDirectory.getAbsolutePath());
         }
-        else folderPathInput.setText("YOU MUST CHOOSE OR ENTER A FOLDER");
+        else folderPathInput.setText("Folder path cannot be empty");
     }
 
     @FXML
     private void organize(){
-        int exitCode=pythonCaller(folderPathInput.getText());
+        int exitCode=OrganizeFiles.organizeFolder(folderPathInput.getText());
         if(exitCode==0) result.setText("Folder has been orgnized");
-        else result.setText("An error occured");
-
+        else if(exitCode==-1) result.setText("Invalid folder path");
+        else if(exitCode==-2) result.setText("Folder is empty");
+        else if(exitCode==-3) result.setText("Failed to move a file");
     }
 }
