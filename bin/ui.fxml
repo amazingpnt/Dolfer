@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?> <VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Control"> <VBox fx:id="mainContainer" styleClass="main-card"
+         onDragOver="#handleDragOver"
+         onDragDropped="#handleDragDropped">
+
+      <Label id="title" text="Dolfer" />
+
+      <VBox spacing="8" alignment="CENTER">
+         <Label id="description" text="Organize your messy downloads or desktop folders in one click." wrapText="true" />
+      </VBox>
+
+      <Pane prefHeight="10" />
+
+      <HBox styleClass="path-container" spacing="0" alignment="CENTER_LEFT">
+         <Label fx:id="folderPathInput" text="Drop a folder here"
+                HBox.hgrow="ALWAYS" styleClass="path-label"
+                prefWidth="350"/>
+         <Button text="Browse..." onAction="#chooseFolder"/>
+      </HBox>
+
+      <Pane prefHeight="15" />
+
+      <Button id="organize" text="Organize" onAction="#organize" />
+
+      <Label fx:id="result" />
+
+   </VBox>
+
+</VBox>
