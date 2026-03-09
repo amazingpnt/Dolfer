@@ -10,7 +10,7 @@
       <Label id="title" text="Dolfer" />
 
       <VBox spacing="8" alignment="CENTER">
-         <Label id="description" text="Organize your messy downloads or desktop folders in one click." wrapText="true" />
+         <Label id="description" text="Organize your messy folders in one click." wrapText="true" />
       </VBox>
 
       <Pane prefHeight="10" />
