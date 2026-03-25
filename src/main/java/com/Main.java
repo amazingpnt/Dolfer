@@ -1,5 +1,4 @@
-
-import java.io.File;
+package com;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
